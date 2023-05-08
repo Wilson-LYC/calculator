@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="mainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyPressed" onKeyReleased="#keyRelease" prefHeight="499.0" prefWidth="324.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
+   <children>
+      <HBox alignment="CENTER_RIGHT" prefHeight="58.0" prefWidth="324.0">
+         <children>
+            <Pane prefHeight="58.0" prefWidth="11.0" />
+            <Button fx:id="btAuthor" mnemonicParsing="false" onMouseClicked="#btAuthorOnMouseClick" onMouseEntered="#btAuthorOnMouseEnter" onMouseExited="#btAuthorOnMouseExit" onMousePressed="#btAuthorOnMousePress" onMouseReleased="#btAuthorOnMouseReleas" prefHeight="38.0" prefWidth="22.0" style="-fx-background-color: #ffffff;">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@setting.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Pane prefHeight="58.0" prefWidth="240.0" />
+            <Button fx:id="btHis" mnemonicParsing="false" onMouseClicked="#btHisOnMouseClick" onMouseEntered="#btHisOnMouseEnter" onMouseExited="#btHisOnMouseExit" onMousePressed="#btHisOnMousePress" onMouseReleased="#btHisOnMouseReleas" prefHeight="38.0" prefWidth="22.0" style="-fx-background-color: #ffffff;">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@history.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Pane prefHeight="58.0" prefWidth="6.0" />
+         </children></HBox>
+      <Pane prefHeight="129.0" prefWidth="324.0">
+         <children>
+            <Label fx:id="secondInput" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="4.0" layoutY="14.0" prefHeight="37.0" prefWidth="309.0" textAlignment="RIGHT">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="firstInput" alignment="CENTER_RIGHT" layoutX="6.0" layoutY="51.0" prefHeight="69.0" prefWidth="309.0" text="0" textAlignment="RIGHT">
+               <font>
+                  <Font name="Arial" size="36.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <GridPane alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="312.0" prefWidth="324.0">
+          <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="bt0" mnemonicParsing="false" onMouseClicked="#bt0OnMouseClick" onMouseEntered="#bt0OnMouseEnter" onMouseExited="#bt0OnMouseExit" onMousePressed="#bt0OnMousePress" onMouseReleased="#bt0OnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font></Button>
+            <Button fx:id="btEqual" mnemonicParsing="false" onMouseClicked="#btEqualOnMouseClick" onMouseEntered="#btEqualOnMouseEnter" onMouseExited="#btEqualOnMouseExit" onMousePressed="#btEqualOnMousePress" onMouseReleased="#btEqualOnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #196aa7;" text="=" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt1" mnemonicParsing="false" onMouseClicked="#bt1OnMouseClick" onMouseEntered="#bt1OnMouseEnter" onMouseExited="#bt1OnMouseExit" onMousePressed="#bt1OnMousePress" onMouseReleased="#bt1OnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt2" mnemonicParsing="false" onMouseClicked="#bt2OnMouseClick" onMouseEntered="#bt2OnMouseEnter" onMouseExited="#bt2OnMouseExit" onMousePressed="#bt2OnMousePress" onMouseReleased="#bt2OnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt3" mnemonicParsing="false" onMouseClicked="#bt3OnMouseClick" onMouseEntered="#bt3OnMouseEnter" onMouseExited="#bt3OnMouseExit" onMousePressed="#bt3OnMousePress" onMouseReleased="#bt3OnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt4" mnemonicParsing="false" onMouseClicked="#bt4OnMouseClick" onMouseEntered="#bt4OnMouseEnter" onMouseExited="#bt4OnMouseExit" onMousePressed="#bt4OnMousePress" onMouseReleased="#bt4OnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="4" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt5" mnemonicParsing="false" onMouseClicked="#bt5OnMouseClick" onMouseEntered="#bt5OnMouseEnter" onMouseExited="#bt5OnMouseExit" onMousePressed="#bt5OnMousePress" onMouseReleased="#bt5OnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt6" mnemonicParsing="false" onMouseClicked="#bt6OnMouseClick" onMouseEntered="#bt6OnMouseEnter" onMouseExited="#bt6OnMouseExit" onMousePressed="#bt6OnMousePress" onMouseReleased="#bt6OnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt7" mnemonicParsing="false" onMouseClicked="#bt7OnMouseClick" onMouseEntered="#bt7OnMouseEnter" onMouseExited="#bt7OnMouseExit" onMousePressed="#bt7OnMousePress" onMouseReleased="#bt7OnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="7" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt8" mnemonicParsing="false" onMouseClicked="#bt8OnMouseClick" onMouseEntered="#bt8OnMouseEnter" onMouseExited="#bt8OnMouseExit" onMousePressed="#bt8OnMousePress" onMouseReleased="#bt8OnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="bt9" mnemonicParsing="false" onMouseClicked="#bt9OnMouseClick" onMouseEntered="#bt9OnMouseEnter" onMouseExited="#bt9OnMouseExit" onMousePressed="#bt9OnMousePress" onMouseReleased="#bt9OnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="btPoint" mnemonicParsing="false" onMouseClicked="#btPointOnMouseClick" onMouseEntered="#btPointOnMouseEnter" onMouseExited="#btPointOnMouseExit" onMousePressed="#btPointOnMousePress" onMouseReleased="#btPointOnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="." GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="btZf" mnemonicParsing="false" onMouseClicked="#btZfOnMouseClick" onMouseEntered="#btZfOnMouseEnter" onMouseExited="#btZfOnMouseExit" onMousePressed="#btZfOnMousePress" onMouseReleased="#btZfOnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="+/-" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="btBackSpace" mnemonicParsing="false" onMouseClicked="#btBackSpaceOnMouseClick" onMouseEntered="#btBackSpaceOnMouseEnter" onMouseExited="#btBackSpaceOnMouseExit" onMousePressed="#btBackSpaceOnMousePress" onMouseReleased="#btBackSpaceOnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="←">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="btAdd" mnemonicParsing="false" onMouseClicked="#btAddOnMouseClick" onMouseEntered="#btAddOnMouseEnter" onMouseExited="#btAddOnMouseExit" onMousePressed="#btAddOnMousePress" onMouseReleased="#btAddOnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="btMultiply" mnemonicParsing="false" onMouseClicked="#btMultiplyOnMouseClick" onMouseEntered="#btMultiplyOnMouseEnter" onMouseExited="#btMultiplyOnMouseExit" onMousePressed="#btMultiplyOnMousePress" onMouseReleased="#btMultiplyOnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="×" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="btC" mnemonicParsing="false" onMouseClicked="#btCOnMouseClick" onMouseEntered="#btCOnMouseEnter" onMouseExited="#btCOnMouseExit" onMousePressed="#btCOnMousePress" onMouseReleased="#btCOnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="C" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="btSubtract" mnemonicParsing="false" onMouseClicked="#btSubtractOnMouseClick" onMouseEntered="#btSubtractOnMouseEnter" onMouseExited="#btSubtractOnMouseExit" onMousePressed="#btSubtractOnMousePress" onMouseReleased="#btSubtractOnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="btCE" mnemonicParsing="false" onMouseClicked="#btCEOnMouseClick" onMouseEntered="#btCEOnMouseEnter" onMouseExited="#btCEOnMouseExit" onMousePressed="#btCEOnMousePress" onMouseReleased="#btCEOnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="CE" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="btDivide" mnemonicParsing="false" onMouseClicked="#btDivideOnMouseClick" onMouseEntered="#btDivideOnMouseEnter" onMouseExited="#btDivideOnMouseExit" onMousePressed="#btDivideOnMousePress" onMouseReleased="#btDivideOnMouseReleas" prefHeight="52.0" prefWidth="72.0" style="-fx-background-color: #fcfcfc; -fx-border-color: #cccccc;" text="÷" GridPane.columnIndex="3">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
+</VBox>
