@@ -13,8 +13,10 @@ import java.util.ArrayList;
 
 public class MainService {
     CalculationService cService;
-    public MainService(CalculationService cService) {
+    MainViewController mainViewController;
+    public MainService(CalculationService cService,MainViewController mainViewController) {
         this.cService = cService;
+        this.mainViewController=mainViewController;
     }
 
     NumTool numTool=new NumTool();
@@ -24,6 +26,7 @@ public class MainService {
 
     private int lastChange=0;//0数字 1操作符 3等于号
     public void intputNum(Label firstIn,Label secondIn,String ch){
+        mainViewController.setFlagZero(true);
         if(lastChange==1){
             cService.addOp(opTemp);
         }
@@ -165,8 +168,11 @@ public class MainService {
                     +" = ";
             this.output(secondIn,text,2);
             text=numTool.dts(history.getAns());
+            if(text.equals("除数不能为零") || text.equals("结果未定义")){
+                mainViewController.setFlagZero(false);
+            }
             this.output(firstIn,text,1);
-            if(history.getAns()>1.0E20 || history.getAns()<1.0E-15){
+            if(Math.abs(history.getAns())>1.0E20 || Math.abs(history.getAns())<1.0E-15){
                 Alert alert=new Alert(Alert.AlertType.WARNING,"计算精度将出现错误！请谨慎操作");
                 alert.showAndWait();
             }
@@ -181,8 +187,11 @@ public class MainService {
                     +" = ";
             this.output(secondIn,text,2);
             text=numTool.dts(history.getAns());
+            if(text.equals("除数不能为零") || text.equals("结果未定义")){
+                mainViewController.setFlagZero(false);
+            }
             this.output(firstIn,text,1);
-            if(history.getAns()>1.0E20 || history.getAns()<1.0E-15){
+            if(Math.abs(history.getAns())>1.0E20 || Math.abs(history.getAns())<1.0E-15){
                 Alert alert=new Alert(Alert.AlertType.WARNING,"计算精度将出现错误！请谨慎操作");
                 alert.showAndWait();
             }
@@ -190,6 +199,7 @@ public class MainService {
         lastChange=3;
     }
     public void ceFuntion(CalculationService cService,Label firstIn,Label secondIn){
+        mainViewController.setFlagZero(true);
         int flag=lastChange;
         if(flag==3){
             cService.reset();
@@ -205,6 +215,7 @@ public class MainService {
         }
     }
     public void  cFuntion(CalculationService cService,Label firstIn,Label secondIn){
+        mainViewController.setFlagZero(true);
         cService.reset();
         this.output(firstIn,"0",1);
         numTemp=0;
@@ -213,14 +224,14 @@ public class MainService {
         lastChange=0;
     }
 
-    public void rollBackSelect(Label firstIn, Label secondIn, MainViewController mainViewController){
+    public void rollBackSelect(Label firstIn, Label secondIn){
         mainViewController.setFlagOperation(false);
         ArrayList<History> histories=cService.getHis();
         HistoryView historyView=new HistoryView(histories,this,firstIn,secondIn,mainViewController);
         historyView.start(new Stage());
     }
 
-    public void rollBackToId(Label firstIn, Label secondIn, int id, MainViewController mainViewController) {
+    public void rollBackToId(Label firstIn, Label secondIn, int id) {
         mainViewController.setFlagOperation(true);
         cService.rollBack(id);
         History history=cService.getLastHis();

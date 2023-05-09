@@ -23,7 +23,7 @@ public class HistoryView extends Application {
     private Label firstIn;
     private Label secondIn;
     private MainViewController mainViewController;
-    public HistoryView(ArrayList<History> histories, MainService mainService, Label firstIn, Label secondIn, MainViewController mainViewController) {
+    public HistoryView(ArrayList<History> histories, MainService mainService, Label firstIn, Label secondIn,MainViewController mainViewController) {
         this.histories = histories;
         this.mainService = mainService;
         this.firstIn = firstIn;
@@ -80,7 +80,7 @@ public class HistoryView extends Application {
                 });
                 int id=i;
                 bt.setOnMouseClicked(mouseEvent -> {
-                    mainService.rollBackToId(firstIn,secondIn,id,mainViewController);
+                    mainService.rollBackToId(firstIn,secondIn,id);
                     primaryStage.close();
                 });
                 vBox.getChildren().add(bt);

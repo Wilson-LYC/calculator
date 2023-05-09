@@ -16,8 +16,9 @@ public class MainViewController {
     public Label secondInput;
 
     boolean flagOperation=true;
+    boolean flagZero=true;
     CalculationService cService=new CalculationService();
-    MainService mainService =new MainService(cService);
+    MainService mainService =new MainService(cService,this);
     /**
      * 按钮外观
      */
@@ -90,11 +91,11 @@ public class MainViewController {
             this.btCEOnMousePress();
             this.btCEOnMouseClick();
         }
-        if(key.getCode()==KeyCode.ENTER){
+        if(key.getCode()==KeyCode.ENTER || key.getCode()==KeyCode.EQUALS){
             this.btEqualOnMouseEnter();
             this.btEqualOnMouseClick();
         }
-        if(key.getCode()==KeyCode.SUBTRACT){
+        if(key.getCode()==KeyCode.SUBTRACT || key.getCode()==KeyCode.MINUS){
             this.btSubtractOnMousePress();
             this.btSubtractOnMouseClick();
         }
@@ -105,6 +106,7 @@ public class MainViewController {
         /*if (key.getCode()==KeyCode.E){
             mainService.intputNum(firstInput,secondInput,"E");
         }*/
+        System.out.println(key.getCode());
     }
     @FXML
     private void keyRelease(KeyEvent key){
@@ -459,7 +461,7 @@ public class MainViewController {
     }
     @FXML
     private void btPointOnMouseClick(){
-        if(!flagOperation)
+        if(!flagOperation || !flagZero)
             return;
         mainService.intputNum(firstInput,secondInput,".");
     }
@@ -487,7 +489,7 @@ public class MainViewController {
     }
     @FXML
     private void btZfOnMouseClick(){
-        if(!flagOperation)
+        if(!flagOperation || !flagZero)
             return;
         mainService.intputNum(firstInput,secondInput,"-");
     }
@@ -516,7 +518,7 @@ public class MainViewController {
     }
     @FXML
     private void btBackSpaceOnMouseClick(){
-        if(!flagOperation)
+        if(!flagOperation || !flagZero)
             return;
         mainService.delete(firstInput,secondInput);
     }
@@ -545,7 +547,7 @@ public class MainViewController {
     }
     @FXML
     private void btAddOnMouseClick(){
-        if(!flagOperation)
+        if(!flagOperation || !flagZero)
             return;
         mainService.inputOp(firstInput,secondInput,"+");
     }
@@ -573,7 +575,7 @@ public class MainViewController {
     }
     @FXML
     private void btSubtractOnMouseClick(){
-        if(!flagOperation)
+        if(!flagOperation || !flagZero)
             return;
         mainService.inputOp(firstInput,secondInput,"-");
     }
@@ -601,7 +603,7 @@ public class MainViewController {
     }
     @FXML
     private void btMultiplyOnMouseClick(){
-        if(!flagOperation)
+        if(!flagOperation || !flagZero)
             return;
         mainService.inputOp(firstInput,secondInput,"×");
     }
@@ -629,7 +631,7 @@ public class MainViewController {
     }
     @FXML
     private void btDivideOnMouseClick(){
-        if(!flagOperation)
+        if(!flagOperation || !flagZero)
             return;
         mainService.inputOp(firstInput,secondInput,"÷");
     }
@@ -657,7 +659,7 @@ public class MainViewController {
     }
     @FXML
     private void btEqualOnMouseClick(){
-        if(!flagOperation)
+        if(!flagOperation || !flagZero)
             return;
         mainService.equal(firstInput,secondInput);
     }
@@ -741,7 +743,7 @@ public class MainViewController {
     private void btHisOnMouseClick(){
         if(!flagOperation)
             return;
-        mainService.rollBackSelect(firstInput,secondInput,this);
+        mainService.rollBackSelect(firstInput,secondInput);
     }
     @FXML
     private void btHisOnMousePress(){
@@ -780,5 +782,8 @@ public class MainViewController {
 
     public void setFlagOperation(boolean x){
         this.flagOperation=x;
+    }
+    public void setFlagZero(boolean x){
+        this.flagZero=x;
     }
 }

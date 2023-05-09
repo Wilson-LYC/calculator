@@ -1,7 +1,5 @@
 package pojo;
 
-import java.util.ArrayList;
-
 public class History {
     public History(double a, String op, double b, double ans) {
         this.a = a;
